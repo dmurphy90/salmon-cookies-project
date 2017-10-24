@@ -1,0 +1,91 @@
+/* app styles */
+
+main {
+  width: 960px;
+  margin: 30px auto;
+}
+
+header {
+  background: #424049;
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+header section p {
+  font-family: 'Bree Serif', serif;
+  font-weight: 800;
+  font-size: 80px;
+  margin-left: 450px;
+}
+
+body {
+  background: #BC653D;
+}
+
+ul {
+  font-family: verdana;
+  margin-left: -180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+p {
+  font-family: Georgia;
+  color: #C8EC95;
+  margin-left: 10px;
+}
+
+h1 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6E9CAB;
+  margin-left: -180px;
+  margin-top: 400px;
+}
+
+h2 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6E9CAB;
+  margin-left: -180px;
+}
+
+h3 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6E9CAB;
+  margin-left: -180px;
+}
+
+.praise div {
+  margin-top: -400px;
+  width: 600px;
+  float: left;
+  margin-left: 300px;
+}
+
+h4 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6E9CAB;
+}
+
+h5 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6E9CAB;
+  margin-top: 30px;
+}
+
+.praise div p {
+  margin-top: 10px;
+  font-family: verdana;
+  color: #fff;
+  font-weight: 600;
+}
