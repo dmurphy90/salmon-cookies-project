@@ -22,11 +22,14 @@ body {
   background: #BC653D;
 }
 
-ul {
+.info div ul {
   font-family: verdana;
   margin-left: -180px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+li {
   color: #fff;
 }
 
@@ -88,4 +91,10 @@ h5 {
   font-family: verdana;
   color: #fff;
   font-weight: 600;
+}
+
+ul {
+  font-family: verdana;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
