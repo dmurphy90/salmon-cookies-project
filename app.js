@@ -6,7 +6,20 @@ var pikeStore = {
   maxCust: 65,
   cookiePer: 6.3,
   figures: function() {
-    return pikeStore.location + ' averages a minimum of ' + pikeStore.minCust + ' customers, a maximum of ' + pikeStore.maxCust + ' with an average of ' + pikeStore.cookiePer + ' cookies sold per customer';
+    var randomDecimal = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+    return Math.floor(randomDecimal);
+  },
+  salesPerHour: function () {
+    var cookiesPerHour = [];
+    var cookiesSold = 0;
+    for (var i = 0; i < 15; i++) {
+      cookiesSold = this.figures() * this.cookiePer;
+      cookiesSold = Math.floor(cookiesSold) + 1;
+      cookiesPerHour.push(cookiesSold);
+      console.log(cookiesSold);
+    }
+    console.log(cookiesPerHour);
+    return cookiesPerHour;
   }
 };
 
@@ -16,7 +29,20 @@ var seatacStore = {
   maxCust: 24,
   cookiePer: 1.2,
   figures: function() {
-    return seatacStore.location + ' averages a minimum of ' + seatacStore.minCust + ' customers, a maximum of ' + seatacStore.maxCust + ' with an average of ' + seatacStore.cookiePer + ' cookies sold per customer';
+    var randomDecimal = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+    return Math.floor(randomDecimal);
+  },
+  salesPerHour: function () {
+    var cookiesPerHour = [];
+    var cookiesSold = 0;
+    for (var i = 0; i < 15; i++) {
+      cookiesSold = this.figures() * this.cookiePer;
+      cookiesSold = Math.floor(cookiesSold) + 1;
+      cookiesPerHour.push(cookiesSold);
+      console.log(cookiesSold);
+    }
+    console.log(cookiesPerHour);
+    return cookiesPerHour;
   }
 };
 
@@ -26,7 +52,20 @@ var seacenStore = {
   maxCust: 38,
   cookiePer: 3.7,
   figures: function() {
-    return seacenStore.location + ' averages a minimum of ' + seacenStore.minCust + ' customers, a maximum of ' + seacenStore.maxCust + ' with an average of ' + seacenStore.cookiePer + ' cookies sold per customer';
+    var randomDecimal = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+    return Math.floor(randomDecimal);
+  },
+  salesPerHour: function () {
+    var cookiesPerHour = [];
+    var cookiesSold = 0;
+    for (var i = 0; i < 15; i++) {
+      cookiesSold = this.figures() * this.cookiePer;
+      cookiesSold = Math.floor(cookiesSold) + 1;
+      cookiesPerHour.push(cookiesSold);
+      console.log(cookiesSold);
+    }
+    console.log(cookiesPerHour);
+    return cookiesPerHour;
   }
 };
 
@@ -36,7 +75,20 @@ var capStore = {
   maxCust: 38,
   cookiePer: 2.3,
   figures: function() {
-    return capStore.location + ' averages a minimum of ' + capStore.minCust + ' customers, a maximum of ' + capStore.maxCust + ' with an average of ' + capStore.cookiePer + ' cookies sold per customer';
+    var randomDecimal = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+    return Math.floor(randomDecimal);
+  },
+  salesPerHour: function () {
+    var cookiesPerHour = [];
+    var cookiesSold = 0;
+    for (var i = 0; i < 15; i++) {
+      cookiesSold = this.figures() * this.cookiePer;
+      cookiesSold = Math.floor(cookiesSold) + 1;
+      cookiesPerHour.push(cookiesSold);
+      console.log(cookiesSold);
+    }
+    console.log(cookiesPerHour);
+    return cookiesPerHour;
   }
 };
 
@@ -46,6 +98,48 @@ var alkiStore = {
   maxCust: 16,
   cookiePer: 4.6,
   figures: function() {
-    return alkkStore.location + ' averages a minimum of ' + alkiStore.minCust + ' customers, a maximum of ' + alkiStore.maxCust + ' with an average of ' + alkiStore.cookiePer + ' cookies sold per customer';
+    var randomDecimal = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+    return Math.floor(randomDecimal);
+  },
+  salesPerHour: function () {
+    var cookiesPerHour = [];
+    var cookiesSold = 0;
+    for (var i = 0; i < 15; i++) {
+      cookiesSold = this.figures() * this.cookiePer;
+      cookiesSold = Math.floor(cookiesSold) + 1;
+      cookiesPerHour.push(cookiesSold);
+      console.log(cookiesSold);
+    }
+    console.log(cookiesPerHour);
+    return cookiesPerHour;
   }
 };
+
+var shopHourlySales = function (shopObj) {
+  var storeHours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+  var arrOfSales = shopObj.salesPerHour();
+  console.log(arrOfSales);
+
+  var storeName = document.createElement('div');
+  storeName.innerHTML = '<p>' + shopObj.location + '</p>';
+  document.body.appendChild(storeName);
+  var docData = document.createElement('ul');
+  var arrCookieHTML = [];
+  var totalCookies = 0;
+  for (var i = 0; i < storeHours.length; i++) {
+    arrCookieHTML.push('<li>' + storeHours[i] + ': ' + arrOfSales[i] + '</li>')
+    totalCookies += arrOfSales[i];
+  }
+
+  arrCookieHTML.push('<li> Total: ' + totalCookies + '</li>');
+
+  var strCookieHTML = arrCookieHTML.join('');
+  docData.innerHTML = strCookieHTML;
+  document.body.appendChild(docData);
+}
+
+shopHourlySales(pikeStore);
+shopHourlySales(seatacStore);
+shopHourlySales(seacenStore);
+shopHourlySales(capStore);
+shopHourlySales(alkiStore);
