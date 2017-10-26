@@ -9,13 +9,44 @@
   </head>
 
   <body>
-    <main>
-      <table id="sales">
-        <tbody id="table_content">
+    <form id="sample_form">
+      <fieldset>
+        <label for="location">Location:</label>
+        <input type="text" name="location" placeholder="Store Location">
+      </fieldset>
+
+      <fieldset>
+        <label for="maxCust">Maximum Customers:</label>
+        <input type="text" name="maxCust" placeholder="Maximum Customers">
+      </fieldset>
+
+      <fieldset>
+        <label for="minCust">Minimum Customers:</label>
+        <input type="text" name="minCust" placeholder="Minimum Customers">
+      </fieldset>
+
+      <fieldset>
+        <label for="cookiesPer">Average Cookies Bought per Customer:</label>
+        <input type="text" name="cookiesPer" placeholder="Average Cookies per Customer">
+      </fieldset>
+
+      <button id="submit_btn" type="submit">Generate Numbers</button>
+    </form>
+
+    <section id="stores">
+      <table>
+        <thead>
+          <th>Location Name:</th>
+          <th>Minimum Customers:</th>
+          <th>Maximum Customers:</th>
+          <th>Average Cookies Per Customer:</th>
+        </thead>
+        <tbody id="sales_table">
+          <!-- student table data goes here -->
         </tbody>
       </table>
-    <script src="app.js"></script>
+    </section>
 
-    </main>
+    <script src="app.js"></script>
   </body>
 </html>
