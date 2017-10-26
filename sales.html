@@ -17,17 +17,17 @@
 
       <fieldset>
         <label for="maxCust">Maximum Customers:</label>
-        <input type="text" name="maxCust" placeholder="Maximum Customers">
+        <input type="number" name="maxCust" placeholder="Maximum Customers">
       </fieldset>
 
       <fieldset>
         <label for="minCust">Minimum Customers:</label>
-        <input type="text" name="minCust" placeholder="Minimum Customers">
+        <input type="number" name="minCust" placeholder="Minimum Customers">
       </fieldset>
 
       <fieldset>
         <label for="cookiesPer">Average Cookies Bought per Customer:</label>
-        <input type="text" name="cookiesPer" placeholder="Average Cookies per Customer">
+        <input type="number" name="cookiesPer" placeholder="Average Cookies per Customer" step="0.01" min="0" max="10">
       </fieldset>
 
       <button id="submit_btn" type="submit">Generate Numbers</button>
@@ -37,9 +37,22 @@
       <table>
         <thead>
           <th>Location Name:</th>
-          <th>Minimum Customers:</th>
-          <th>Maximum Customers:</th>
-          <th>Average Cookies Per Customer:</th>
+          <th>6 AM</th>
+          <th>7 AM</th>
+          <th>8 AM</th>
+          <th>9 AM</th>
+          <th>10 AM</th>
+          <th>11 AM</th>
+          <th>Noon</th>
+          <th>1 PM</th>
+          <th>2 PM</th>
+          <th>3 PM</th>
+          <th>4 PM</th>
+          <th>5 PM</th>
+          <th>6 PM</th>
+          <th>7 PM</th>
+          <th>8 PM</th>
+          <th>Total Sold:</th>
         </thead>
         <tbody id="sales_table">
           <!-- student table data goes here -->

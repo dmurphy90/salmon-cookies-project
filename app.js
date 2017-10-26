@@ -2,15 +2,15 @@
 var form = document.getElementById('sample_form');
 var table = document.getElementById('sales_table');
 var storeData = [];
+var storeHours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
 
 function Store(location, maxCust, minCust, cookiesPer) {
   this.location = location;
-  this.maxCust = maxCust;
-  this.minCust = minCust;
-  this.cookiesPer = cookiesPer;
+  this.maxCust = parseInt(maxCust);
+  this.minCust = parseInt(minCust);
+  this.cookiesPer = parseInt(cookiesPer);
   this.cookiesPerHour = [];
   this.totalCookies = 0;
-  this.storeHours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
 }
 
 function formData(event) {
@@ -21,9 +21,10 @@ function formData(event) {
   var minCust = event.target.minCust.value;
   var cookiesPer = event.target.cookiesPer.value;
 
-  if (Number(minCust) < Number(maxCust)) {
+  if (parseInt(minCust) < parseInt(maxCust)) {
     storeData.push(new Store(location, maxCust, minCust, cookiesPer));
     console.log('store data:', storeData);
+    buildHeader();
     createTable();
     form.reset();
   } else {
@@ -36,7 +37,7 @@ Store.prototype.salesPerHour = function() {
   var min = this.minCust;
   var finalCookies = 0;
   var cookiesHourly = [];
-  for (var i = 0; i < this.storeHours.length; i++) {
+  for (var i = 0; i < storeHours.length; i++) {
     var randomInt = Math.floor(Math.random() * (max - min) + min);
     var hourlyCookies = Math.floor(randomInt * this.cookiesPer);
     cookiesHourly.push(hourlyCookies);
@@ -47,6 +48,22 @@ Store.prototype.salesPerHour = function() {
   this.cookiesPerHour = cookiesHourly;
   console.log('!!!', cookiesHourly);
   console.log('@@@', finalCookies);
+};
+
+function buildHeader() {
+  var arrTimes = [];
+  for (var i = 0; i < storeHours.length; i++) {
+    arrTimes.push (
+      '<td>' + storeHours[i] + '</td>'
+    );
+  };
+  var tableHeader = '<tr>' + arrTimes.join('') + '</tr>';
+  var newHeader = document.createElement('thead');
+  var table = document.getElementById('sales_table');
+  newHeader.innerHTML = tableHeader;
+  table.appendChild(newHeader);
+  console.log(tableHeader);
+  console.log('arrTimes:', arrTimes);
 };
 
 function createTable() {
@@ -60,9 +77,9 @@ function createTable() {
 
     console.log(storeData[i].cookiesPerHour);
 
-    for (var j = 0; j < storeData[i].storeHours.length; j++) {
+    for (var j = 0; j < storeHours.length; j++) {
       hourSales.push(
-        '<td>' + storeData[i].cookiesPerHour[j][1] + '</td>'
+        '<td>' + storeData[i].cookiesPerHour[j] + '</td>'
       );
     };
     hourSales.push(storeData[i].totalCookies);
