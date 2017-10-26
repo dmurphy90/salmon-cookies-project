@@ -26,6 +26,7 @@ function formData(event) {
     console.log('store data:', storeData);
     buildHeader();
     createTable();
+    // hourlyTotals();
     form.reset();
   } else {
     alert ('Max Customers must be greater than Min Customers');
@@ -86,6 +87,18 @@ function createTable() {
     newRow.innerHTML = hourSales.join('');
     table.appendChild(newRow);
   };
+
+//   function hourlyTotals() {
+//     var hourlyFinals = 0;
+//     var hourTotal = ['<td>' + hourlyFinals + '</td>']
+//     var newRow = document.createElement('tr');
+//     for (var i = 0; i < storeData.length; i++) {
+//       for (var j = 0; j < storeHours.length; j++)
+//         hourlyFinal += this.cookiesPerHour[i][j];
+//     }
+//   }
+//   newRow.innerHTML= hourlyFinals.join('');
+//   table.appendChild(newRow);
 }
 
 form.addEventListener('submit', formData);

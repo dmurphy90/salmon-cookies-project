@@ -22,6 +22,17 @@ body {
   background: #BC653D;
 }
 
+img {
+  border-radius: 10px;
+}
+
+img.main_banner {
+  margin: 0 auto;
+  width: 700px;
+  padding-top: 30px;
+  padding-left: 120px;
+}
+
 .info div ul {
   font-family: verdana;
   margin-left: -180px;
@@ -45,7 +56,7 @@ h1 {
   font-size: 30px;
   color: #6E9CAB;
   margin-left: -180px;
-  margin-top: 400px;
+  margin-top: 120px;
 }
 
 h2 {
@@ -86,6 +97,21 @@ h5 {
   margin-top: 30px;
 }
 
+h6 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6E9CAB;
+  margin-top: 30px;
+}
+
+.sale div p {
+  margin-top: 10px;
+  font-family: verdana;
+  color: #fff;
+  font-weight: 600;
+}
+
 .praise div p {
   margin-top: 10px;
   font-family: verdana;
@@ -97,5 +123,91 @@ ul {
   font-family: verdana;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 2px;
+}
+
+input {
+  padding: 7px;
+  border: solid 1px #C8EC95;
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-bottom: 2px
+}
+
+button {
+  padding: 10px;
+  margin-left: 570px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: #6E9CAB;
+  color: #fff;
+  font-weight: bold;
+}
+
+label {
+  margin-top: 30px;
+  margin-left: 460px;
+  font-family: verdana;
+  color: #fff;
+}
+
+table, th, td {
+  border: solid 2px #fff;
+  padding: 5px;
+  margin-left: 120px;
+  font-family: verdana;
+  background: #444;
+  color: #fff;
+}
+
+img.the_goods {
+  position: relative;
+  width: 300px;
+  margin-left: 920px;
+  margin-top: -310px;
+  margin-bottom: 110px;
+}
+
+img.customer_pics {
+  position: relative;
+  width: 450px;
+  margin-top: 30px;
+  margin-left: 440px;
+}
+
+img.tools {
+  background: #424049;
+  width: 280px;
+  margin-left: 660px;
+  margin-top: -290px;
+  margin-bottom: 150px;
+}
+
+img.ingredients {
+  position: relative;
+  width: 200px;
+  margin-bottom: -220px;
+  margin-left: 130px;
+}
+
+img.chinook {
+  position: relative;
+  width: 250px;
+  margin-left: -180px;
+}
+
+img.shirt {
+  position: relative;
+  width: 250px;
+  border-radius: 10px;
+  margin-left: 360px;
+  margin-top: 10px;
+}
+
+a {
+  display: block;
+  font-family: 'Bree Serif', serif;
+  font-size: 30px;
+  margin-left: 350px;
 }
