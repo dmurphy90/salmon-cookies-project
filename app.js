@@ -93,9 +93,9 @@ function createTable() {
 function hourlyTotals() {
   var footer = document.createElement('tfoot');
   var totalName = ['<td>' + 'Hourly Total' + '</td>'];
-  var newRow = document.createElement('tr');
+  // var totalHourly = '<td>Hourly Sales</td>'
   // footer.appendChild(totalName);
-  // totalName.textContent = 'Hourly Totals';
+  totalName.textContent = 'Hourly Totals';
 
   for (var i = 0; i < storeHours.length; i++) {
     var hourlyTotal = 0;
@@ -104,10 +104,11 @@ function hourlyTotals() {
       totalName.push(
         '<td>' + hourlyTotal + '</td>'
       );
+      console.log('hourly total:', hourlyTotal);
     }
     // var hourlyTotalTd = document.createElement('td');
-    newRow.innerHTML = hourlyTotal;
-    footer.appendChild(newRow);
+    footer.innerHTML = hourlyTotal;
+    table.appendChild(footer);
     // hourlyTotalTd.textContent = hourlyTotal;
   }
   table.appendChild(footer);
